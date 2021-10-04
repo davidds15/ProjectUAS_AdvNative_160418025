@@ -43,24 +43,24 @@
 
             <TextView
                 android:id="@+id/txtName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="146dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:text="STUDENT NAME"
+                android:text="Recipe Name"
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/txtID" />
+                app:layout_constraintTop_toBottomOf="@+id/txtrecipename" />
 
             <TextView
-                android:id="@+id/txtID"
+                android:id="@+id/txtrecipename"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
-                android:text="ID"
+                android:text="Kategori"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView"

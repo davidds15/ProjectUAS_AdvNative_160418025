@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.15989583333333332" />
         <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
-        <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/cooking_list_item.xml" value="0.17708333333333334" />
+        <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/cooking_list_item.xml" value="0.4" />
         <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/cookinglistitem.xml" value="0.17708333333333334" />
-        <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/fragment_add_recipe.xml" value="0.17708333333333334" />
+        <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/fragment_add_recipe.xml" value="0.359375" />
         <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/fragment_cooking_detail.xml" value="0.264" />
         <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/fragment_cooking_list.xml" value="0.17708333333333334" />
         <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/fragment_edit_profile.xml" value="0.264" />
@@ -16,6 +17,7 @@
         <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/layout/fragment_search.xml" value="0.264" />
         <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/menu/bottomnavigation.xml" value="0.27447916666666666" />
+        <entry key="..\:/Adv Native Prog/Project_Adv_160418025/app/src/main/res/menu/drawer.xml" value="0.264" />
       </map>
     </option>
   </component>

@@ -8,18 +8,18 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import id.ac.ubaya.infor.project_adv_160418025.viewmodel.ListViewModel
+import id.ac.ubaya.infor.project_adv_160418025.viewmodel.CookingViewModel
 import kotlinx.android.synthetic.main.fragment_cooking_list.*
 import id.ac.ubaya.infor.project_adv_160418025.R
 
 class CookingListFragment : Fragment() {
-    private lateinit var viewModel: ListViewModel
+    private lateinit var viewModel: CookingViewModel
     private val studentListAdapter = CookingListAdapter(arrayListOf())
     fun observeViewModel() {
-        viewModel.studentsLD.observe(viewLifecycleOwner, Observer {
+        viewModel.cookingLD.observe(viewLifecycleOwner, Observer {
             studentListAdapter.updateStudentList(it)
         })
-        viewModel.studentLoadErrorLD.observe(viewLifecycleOwner, Observer {
+        viewModel.cookingLoadErrorLD.observe(viewLifecycleOwner, Observer {
             if(it == true) {
                 textError.visibility = View.VISIBLE
             } else {
@@ -54,7 +54,7 @@ class CookingListFragment : Fragment() {
             viewModel.refresh()
             refreshLayout.isRefreshing = false
         }
-        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(CookingViewModel::class.java)
         viewModel.refresh()
         recView.layoutManager = LinearLayoutManager(context)
         recView.adapter = studentListAdapter

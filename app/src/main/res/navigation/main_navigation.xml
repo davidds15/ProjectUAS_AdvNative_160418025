@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/cookingListFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.CookingListFragment"
-        android:label="fragment_cooking_list"
-        tools:layout="@layout/fragment_cooking_list" >
+        android:label="Fresh Cook"
+        tools:layout="@layout/fragment_cooking_list">
         <action
             android:id="@+id/action_cookingListFragment_to_cookingDetailFragment"
             app:destination="@id/cookingDetailFragment" />
@@ -34,14 +34,18 @@
             android:name="photoUrl"
             app:argType="string" />
         <argument
-            android:name="id"
+            android:name="kategori"
             app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.EditProfileFragment"
         android:label="fragment_edit_profile"
-        tools:layout="@layout/fragment_edit_profile" />
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/editprofiletoprofile"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/favouriteFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.FavouriteFragment"
@@ -61,7 +65,11 @@
         android:id="@+id/profileFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/profiletoeditprofile"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.SearchFragment"

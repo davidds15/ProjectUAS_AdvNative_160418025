@@ -19,10 +19,10 @@ class CookingListAdapter(val cookingList:ArrayList<Cooking>):RecyclerView.Adapte
         return StudentViewHolder(view)
     }
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
-        holder.view.txtID.text = cookingList[position].id
+        holder.view.txtrecipename.text = cookingList[position].kategori
         holder.view.txtName.text = cookingList[position].name
         holder.view.btnDetail.setOnClickListener {
-            val action = cookingList[position].id?.let { it1 ->
+            val action = cookingList[position].kategori?.let { it1 ->
                 CookingListFragmentDirections.actionCookingListFragmentToCookingDetailFragment(
                     it1,cookingList[position].name.toString(),cookingList[position].description.toString(),cookingList[position].photoUrl.toString())
             }

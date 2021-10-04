@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
         android:id="@+id/cookingListFragment"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home" />
+        android:title="Home"
+        android:visible="true"
+        app:showAsAction="always" />
     <item
         android:id="@+id/searchFragment"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_search_24"
-        android:title="Search" />
+        android:title="Search"
+        android:visible="true"
+        app:showAsAction="always" />
     <item
         android:id="@+id/favouriteFragment"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="Favourite" />
+        android:title="Favourite"
+        android:visible="true"
+        app:showAsAction="always" />
     <item
         android:id="@+id/profileFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_people_24"
-        android:title="Profile" />
+        android:title="Profile"
+        android:visible="true"
+        app:showAsAction="always" />
 </menu>
