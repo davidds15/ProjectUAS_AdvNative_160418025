@@ -16,9 +16,9 @@ import kotlinx.android.synthetic.main.activity_main.*
             setContentView(R.layout.activity_main)
             setSupportActionBar(findViewById(R.id.toolbar))
 
-            val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
+            val navHostFragment = supportFragmentManager.findFragmentById(R.id.hostFragment) as NavHostFragment
             navController = navHostFragment.navController
-            NavigationUI.setupActionBarWithNavController(this, navController,drawerLayout)
+            NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
             NavigationUI.setupWithNavController(navigationview, navController)
             bottomNavigationView.setupWithNavController(navController)
         }

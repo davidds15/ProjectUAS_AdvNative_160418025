@@ -30,7 +30,7 @@ class CookingListAdapter(val cookingList:ArrayList<Cooking>):RecyclerView.Adapte
                 Navigation.findNavController(it).navigate(action)
             }
         }
-        holder.view.imageView.loadImage(cookingList[position].photoUrl,
+        holder.view.imageview.loadImage(cookingList[position].photoUrl,
             holder.view.progressBar)
     }
     override fun getItemCount(): Int {

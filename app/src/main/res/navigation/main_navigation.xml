@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/cookingListFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.CookingListFragment"
-        android:label="Fresh Cook"
+        android:label="Fresh Cook App"
         tools:layout="@layout/fragment_cooking_list">
         <action
             android:id="@+id/action_cookingListFragment_to_cookingDetailFragment"
@@ -17,13 +17,17 @@
     <fragment
         android:id="@+id/addRecipeFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.AddRecipeFragment"
-        android:label="fragment_add_recipe"
-        tools:layout="@layout/fragment_add_recipe" />
+        android:label="Add Recipe Here"
+        tools:layout="@layout/fragment_add_recipe" >
+        <action
+            android:id="@+id/addrecipetohome"
+            app:destination="@id/cookingListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/cookingDetailFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.CookingDetailFragment"
-        android:label="fragment_cooking_detail"
-        tools:layout="@layout/fragment_cooking_detail" >
+        android:label="Recipe Detail"
+        tools:layout="@layout/fragment_cooking_detail">
         <argument
             android:name="name"
             app:argType="string" />
@@ -40,8 +44,8 @@
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.EditProfileFragment"
-        android:label="fragment_edit_profile"
-        tools:layout="@layout/fragment_edit_profile" >
+        android:label="Edit Your Profile"
+        tools:layout="@layout/fragment_edit_profile">
         <action
             android:id="@+id/editprofiletoprofile"
             app:destination="@id/profileFragment" />
@@ -49,30 +53,60 @@
     <fragment
         android:id="@+id/favouriteFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.FavouriteFragment"
-        android:label="fragment_favourite"
+        android:label="Your Favourite Recipe"
         tools:layout="@layout/fragment_favourite" />
     <fragment
         android:id="@+id/fragmentLanguage"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.FragmentLanguage"
-        android:label="fragment_language"
-        tools:layout="@layout/fragment_language" />
+        android:label="Choose Your Language"
+        tools:layout="@layout/fragment_language" >
+        <action
+            android:id="@+id/languagetohome"
+            app:destination="@id/cookingListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/logintohome"
+            app:destination="@id/cookingListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
+        android:label="Your Profile"
+        tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/profiletoeditprofile"
             app:destination="@id/editProfileFragment" />
     </fragment>
     <fragment
-        android:id="@+id/searchFragment"
+        android:id="@+id/searchRecipeFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.SearchFragment"
-        android:label="fragment_search"
+        android:label="Search Recipe"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="id.ac.ubaya.infor.project_adv_160418025.view.AboutFragment"
+        android:label="About This App"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="id.ac.ubaya.infor.project_adv_160418025.view.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/settinglanguage"
+            app:destination="@id/fragmentLanguage" />
+        <action
+            android:id="@+id/settingtoabout"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchRecipeFragment"
+        android:name="id.ac.ubaya.infor.project_adv_160418025.view.SearchRecipeFragment"
+        android:label="Search Recipe "
+        tools:layout="@layout/fragment_search_recipe" />
 </navigation>

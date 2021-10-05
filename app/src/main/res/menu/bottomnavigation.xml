@@ -10,7 +10,7 @@
         android:visible="true"
         app:showAsAction="always" />
     <item
-        android:id="@+id/searchFragment"
+        android:id="@+id/searchRecipeFragment"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_search_24"
         android:title="Search"
