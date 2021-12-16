@@ -12,7 +12,7 @@ import id.ac.ubaya.infor.project_adv_160418025.model.Cooking
 import kotlinx.android.synthetic.main.cooking_list_item.view.*
 import id.ac.ubaya.infor.project_adv_160418025.util.loadImage
 
-class CookingListAdapter(val cookingList:ArrayList<Cooking>):RecyclerView.Adapter<CookingListAdapter.CookingViewHolder>(),ButtonDetailClickListener {
+class CookingListFavouriteAdapter(val cookingList:ArrayList<Cooking>):RecyclerView.Adapter<CookingListFavouriteAdapter.CookingViewHolder>(),ButtonDetailClickListener {
     class CookingViewHolder(var view: CookingListItemBinding) : RecyclerView.ViewHolder(view.root)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):CookingViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -34,7 +34,7 @@ class CookingListAdapter(val cookingList:ArrayList<Cooking>):RecyclerView.Adapte
 
     override fun onButtonDetailClick(v: View) {
         val action =
-            CookingListFragmentDirections.actionCookingListFragmentToCookingDetailFragment(v.tag.toString().toInt())
+            FavouriteFragmentDirections.actionFavouriteFragmentToCookingDetailFragment(v.tag.toString().toInt())
         Navigation.findNavController(v).navigate(action)
     }
 

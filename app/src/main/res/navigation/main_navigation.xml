@@ -29,17 +29,8 @@
         android:label="Recipe Detail"
         tools:layout="@layout/fragment_cooking_detail">
         <argument
-            android:name="name"
-            app:argType="string" />
-        <argument
-            android:name="description"
-            app:argType="string" />
-        <argument
-            android:name="photoUrl"
-            app:argType="string" />
-        <argument
-            android:name="kategori"
-            app:argType="string" />
+            android:name="uuid"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
@@ -49,12 +40,19 @@
         <action
             android:id="@+id/editprofiletoprofile"
             app:destination="@id/profileFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/favouriteFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.FavouriteFragment"
         android:label="Your Favourite Recipe"
-        tools:layout="@layout/fragment_favourite" />
+        tools:layout="@layout/fragment_favourite" >
+        <action
+            android:id="@+id/action_favouriteFragment_to_cookingDetailFragment"
+            app:destination="@id/cookingDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentLanguage"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.FragmentLanguage"
@@ -108,5 +106,9 @@
         android:id="@+id/searchRecipeFragment"
         android:name="id.ac.ubaya.infor.project_adv_160418025.view.SearchRecipeFragment"
         android:label="Search Recipe "
-        tools:layout="@layout/fragment_search_recipe" />
+        tools:layout="@layout/fragment_search_recipe" >
+        <action
+            android:id="@+id/action_searchRecipeFragment_to_cookingDetailFragment"
+            app:destination="@id/cookingDetailFragment" />
+    </fragment>
 </navigation>

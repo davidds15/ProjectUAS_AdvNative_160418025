@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <data>
+        <variable
+            name="user"
+            type="id.ac.ubaya.infor.project_adv_160418025.model.User" />
+        <variable
+            name="listener"
+            type="id.ac.ubaya.infor.project_adv_160418025.view.ButtonUpdateClickListener" />
+    </data>
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.EditProfileFragment">
@@ -51,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Confirm Password"
                         android:inputType="text|textPassword"
-                        android:text="@@050400" />
+                        android:text="@{user.password}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -73,7 +82,7 @@
                         android:layout_height="wrap_content"
                         android:hint="Password"
                         android:inputType="textPassword"
-                        android:text="@@050400" />
+                        android:text="@{user.password}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -94,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Bio"
-                        android:text="Hello ! I'm David" />
+                        android:text="@{user.bio}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -116,7 +125,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Username"
-                        android:text="Davidds15" />
+                        android:text="@{user.username}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
@@ -128,6 +137,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="24dp"
                     android:text="UPDATE"
+                    android:onClick="@{listener::ButtonUpdateClickListener}"
                     app:cornerRadius="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -139,3 +149,4 @@
     </ScrollView>
 
 </FrameLayout>
+</layout>

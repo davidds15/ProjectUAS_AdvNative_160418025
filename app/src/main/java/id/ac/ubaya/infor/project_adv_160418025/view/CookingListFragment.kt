@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingComponent
+import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,25 +16,33 @@ import id.ac.ubaya.infor.project_adv_160418025.R
 
 class CookingListFragment : Fragment() {
     private lateinit var viewModel: CookingViewModel
-    private val studentListAdapter = CookingListAdapter(arrayListOf())
+    private val cookingListAdapter = CookingListAdapter(arrayListOf())
+
     fun observeViewModel() {
         viewModel.cookingLD.observe(viewLifecycleOwner, Observer {
-            studentListAdapter.updateStudentList(it)
+            cookingListAdapter.updateCookingList(it)
         })
         viewModel.cookingLoadErrorLD.observe(viewLifecycleOwner, Observer {
-            if(it == true) {
+            if(it) {
                 textError.visibility = View.VISIBLE
             } else {
                 textError.visibility = View.GONE
             }
         })
-        viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
-            if(it == true) {
+        viewModel.cookingLD.observe(viewLifecycleOwner, Observer {
+            if(it.isEmpty()) {
                 recView.visibility = View.GONE
                 progressLoad.visibility = View.VISIBLE
             } else {
                 recView.visibility = View.VISIBLE
                 progressLoad.visibility = View.GONE
+            }
+        })
+        viewModel.loadingLD.observe(viewLifecycleOwner, Observer {
+            if(it) {
+                textError.visibility = View.VISIBLE
+            } else {
+                textError.visibility = View.GONE
             }
         })
     }
@@ -51,13 +61,14 @@ class CookingListFragment : Fragment() {
             recView.visibility = View.GONE
             textError.visibility = View.GONE
             progressLoad.visibility = View.VISIBLE
-            viewModel.refresh()
+            viewModel.fetch()
             refreshLayout.isRefreshing = false
         }
         viewModel = ViewModelProvider(this).get(CookingViewModel::class.java)
-        viewModel.refresh()
+        viewModel.fetch()
+
         recView.layoutManager = LinearLayoutManager(context)
-        recView.adapter = studentListAdapter
+        recView.adapter = cookingListAdapter
         observeViewModel()
     }
 }

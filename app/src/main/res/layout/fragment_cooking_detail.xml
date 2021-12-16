@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools" >
+    <data>
+        <variable
+            name="detail"
+            type="id.ac.ubaya.infor.project_adv_160418025.model.Cooking" />
+        <variable
+            name="listener"
+            type="id.ac.ubaya.infor.project_adv_160418025.view.ButtonDetailClickListener" />
+    </data>
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.CookingDetailFragment">
@@ -36,6 +45,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:scaleType="fitXY"
+                    android:imageUrl="@{detail.photo_url}"
+                    android:progressBar="@{progressBarDetil}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:text="Recipe Name"
+                    android:text="@{detail.name}"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:text="Category"
+                    android:text="@{detail.kategori}"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="24dp"
-                    android:text="Description"
+                    android:text="@{detail.description}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -99,3 +110,4 @@
     </ScrollView>
 
 </FrameLayout>
+</layout>
